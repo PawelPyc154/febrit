@@ -1,18 +1,33 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
+import { SkeletonTheme } from 'react-loading-skeleton'
+import { theme } from 'twin.macro'
 import { App } from './app'
 import reportWebVitals from './reportWebVitals'
 import { GlobalStyles } from './components/globalStyles'
+import 'react-loading-skeleton/dist/skeleton.css'
+
+const client = new ApolloClient({
+  uri: 'https://graphqlzero.almansi.me/api',
+  cache: new InMemoryCache(),
+})
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles />
-    <App />
+    <ApolloProvider client={client}>
+      <SkeletonTheme
+        baseColor={theme('colors.gray.100')}
+        highlightColor={theme('colors.gray.200')}
+        duration={4}
+        borderRadius="2px"
+      >
+        <App />
+      </SkeletonTheme>
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 )
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals()

@@ -1,3 +1,3 @@
-const UserPosts = () => <div>UserPosts</div>
+const UserPosts = () => <div>fd</div>
 
 export { UserPosts }
