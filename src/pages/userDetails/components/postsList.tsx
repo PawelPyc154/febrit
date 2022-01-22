@@ -35,7 +35,6 @@ const PostsList = () => {
           }
         }
       `,
-    { onCompleted: () => console.log('GetPosts'), displayName: 'GetPosts' },
   )
   const posts = data?.user.posts.data
 
@@ -56,7 +55,7 @@ const PostsList = () => {
     <Container>
       {posts?.map(({ id, title }) => (
         <PostItem key={id}>
-          <IconButton color="gray" onClick={() => console.log('test')}>
+          <IconButton color="gray">
             <BiTrash size={26} />
           </IconButton>
 

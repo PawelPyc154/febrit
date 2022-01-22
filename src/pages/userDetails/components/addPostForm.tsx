@@ -29,7 +29,7 @@ const AddPostForm = () => {
       refetchQueries: ['GetPosts'],
     },
   )
-  console.log(loading, error)
+
   const onSubmit = (value: FormValue) => {
     addPost({ variables: { input: value } })
   }

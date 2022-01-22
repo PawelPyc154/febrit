@@ -1,6 +1,6 @@
 import { useQuery, gql } from '@apollo/client'
 import { BiTrash } from 'react-icons/bi'
-// import tw from 'twin.macro'
+
 import { UserHeader } from '../components/common/userHeader'
 import { IconButton } from '../components/form/iconButton'
 import 'styled-components/macro'
@@ -29,7 +29,7 @@ const PostDetails = () => {
     <div>
       <UserHeader
         action={
-          <IconButton color="green" onClick={() => console.log('test')}>
+          <IconButton color="green">
             <BiTrash size={26} />
           </IconButton>
         }
