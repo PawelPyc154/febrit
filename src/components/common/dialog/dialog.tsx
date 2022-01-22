@@ -40,7 +40,7 @@ const Dialog = ({ children, trigger, title }: DialogProps) => (
 
 export { Dialog }
 
-const DialogContentStyled = tw(DialogContent)`rounded-md !p-0 relative`
+const DialogContentStyled = tw(DialogContent)`rounded-md !p-0 relative bg-gray-100`
 const TitleWrapper = tw(Heading)`border-b border-gray-300 py-4 pl-6 pr-4 relative`
 const ContentWrapper = tw.div`p-6`
 const CloseButton = tw.button`p-2 absolute right-2 top-1/2 -translate-y-1/2`

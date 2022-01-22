@@ -24,7 +24,7 @@ const PostsList = () => {
 
   const { loading, error, data } = useQuery<UserResponse>(
     gql`
-        query {
+        query GetPosts {
           user(id: ${userId}) {
             posts {
               data {
@@ -35,7 +35,7 @@ const PostsList = () => {
           }
         }
       `,
-    {},
+    { onCompleted: () => console.log('GetPosts'), displayName: 'GetPosts' },
   )
   const posts = data?.user.posts.data
 
