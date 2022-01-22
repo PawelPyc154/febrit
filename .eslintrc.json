@@ -21,6 +21,7 @@
     "semi": "off",
     "linebreak-style": 0,
     "react/jsx-filename-extension": "off",
+    "react/jsx-wrap-multilines": "off",
     "react/react-in-jsx-scope": "off",
     "react/function-component-definition": "off",
     "import/prefer-default-export": "off",

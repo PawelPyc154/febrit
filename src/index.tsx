@@ -18,7 +18,7 @@ ReactDOM.render(
     <GlobalStyles />
     <ApolloProvider client={client}>
       <SkeletonTheme
-        baseColor={theme('colors.gray.100')}
+        baseColor={theme('colors.gray.300')}
         highlightColor={theme('colors.gray.200')}
         duration={4}
         borderRadius="2px"
