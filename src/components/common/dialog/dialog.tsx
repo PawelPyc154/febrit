@@ -7,7 +7,6 @@ import tw from 'twin.macro'
 import { Heading } from '../heading'
 import 'styled-components/macro'
 import { DialogContextValue, DialogProvider } from './dialogProvider'
-import { IconButton } from '../../form/iconButton'
 
 interface DialogProps {
   trigger: ReactNode
@@ -27,7 +26,7 @@ const Dialog = ({ children, trigger, title }: DialogProps) => (
               <TitleWrapper size="lg" tag="h1">
                 {title}
                 <CloseButton color="gray" type="button" onClick={() => setIsOpenDialog(false)}>
-                  <MdClose />
+                  <MdClose size="26" />
                 </CloseButton>
               </TitleWrapper>
               <ContentWrapper>{children({ isOpenDialog, setIsOpenDialog })}</ContentWrapper>
@@ -41,9 +40,7 @@ const Dialog = ({ children, trigger, title }: DialogProps) => (
 
 export { Dialog }
 
-const DialogContentStyled = tw(DialogContent)`rounded-md p-0 relative`
-const TitleWrapper = tw(
-  Heading,
-)`border-b border-gray-300 py-4 pl-6 pr-4 items-center flex justify-between`
+const DialogContentStyled = tw(DialogContent)`rounded-md !p-0 relative`
+const TitleWrapper = tw(Heading)`border-b border-gray-300 py-4 pl-6 pr-4 relative`
 const ContentWrapper = tw.div`p-6`
-const CloseButton = tw.button`p-2`
+const CloseButton = tw.button`p-2 absolute right-2 top-1/2 -translate-y-1/2`

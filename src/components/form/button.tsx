@@ -2,7 +2,7 @@ import tw, { styled } from 'twin.macro'
 import 'styled-components/macro'
 
 const colors = {
-  // white: tw`bg-white text-black hover:(bg-black text-white)`,
+  gray: tw`bg-gray-100 text-black hover:bg-gray-200`,
   green: tw`bg-green-600 hover:bg-green-700`,
 }
 const sizes = {
@@ -16,7 +16,7 @@ interface ButtonProps {
 }
 
 const Button = styled.button<ButtonProps>(({ color = 'green', size = 'base' }) => [
-  tw` disabled:(opacity-30 pointer-events-none) rounded-md text-white font-medium shadow-lg px-4 flex items-center justify-center`,
+  tw` disabled:(opacity-30 pointer-events-none) rounded-md text-white font-medium px-4 flex items-center justify-center`,
   colors[color],
   sizes[size],
 ])
